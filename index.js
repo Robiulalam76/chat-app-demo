@@ -1,12 +1,6 @@
-// const express = require('express');
-// const connectDB = require('./confiq/DB');
-// const app = express()
+const express = require('express');
+const app = express()
 const PORT = process.env.PORT || 5500
-
-
-// app.use(express.json())
-// app.use(express.urlencoded({ extended: true }))
-// connectDB()
 
 const server = require("http").createServer();
 const io = require("socket.io")(server, {
@@ -39,12 +33,3 @@ io.on("connection", (socket) => {
 server.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
 });
-
-// //----------------------------
-// app.get('/', async (req, res) => {
-//     res.send('Hello World!')
-// })
-
-// app.listen(PORT, () => {
-//     console.log(`app listening on port ${PORT}`)
-// })
